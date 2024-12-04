@@ -1,0 +1,100 @@
+{
+  $jsonSchema: {
+    bsonType: 'object',
+    required: [
+      'number_of_blocks',
+      'address',
+      'subscribe_company_name',
+      'capacity'
+    ],
+    additionalProperties: false,
+    properties: {
+      _id: {},
+      number_of_blocks: {
+        bsonType: 'number',
+        description: '\'number_of_blocks\' is required and is a number'
+      },
+      slot: {
+        bsonType: 'object',
+        description: '\'slot\' is an object',
+        properties: {
+          is_slot_available: {
+            bsonType: 'bool'
+          },
+          is_reentry_allowed: {
+            bsonType: 'bool'
+          },
+          is_valet_parking_available: {
+            bsonType: 'bool'
+          }
+        }
+      },
+      address: {
+        bsonType: 'string',
+        description: '\'address\' is required and is a string'
+      },
+      zip: {
+        bsonType: 'number',
+        description: '\'zip\' is a number'
+      },
+      subscribe_company_name: {
+        bsonType: 'string',
+        description: '\'subscribe_company_name\' is required and is a string'
+      },
+      block_code: {
+        bsonType: 'string',
+        description: '\'block_code\' is a string'
+      },
+      is_block_full: {
+        bsonType: 'bool',
+        description: '\'is_block_full\' is a boolean'
+      },
+      number: {
+        bsonType: 'object',
+        description: '\'number\' is an object',
+        properties: {
+          floor_number: {
+            bsonType: 'number'
+          },
+          number_of_wings: {
+            bsonType: 'number'
+          },
+          number_of_slots: {
+            bsonType: 'number'
+          }
+        }
+      },
+      capacity: {
+        bsonType: 'object',
+        description: '\'floor\' is required and is an object',
+        required: [
+          'is_covered',
+          'is_accessible',
+          'is_floor_full'
+        ],
+        properties: {
+          is_covered: {
+            bsonType: 'bool'
+          },
+          is_accessible: {
+            bsonType: 'bool'
+          },
+          is_floor_full: {
+            bsonType: 'bool'
+          },
+          is_reserved_reg_cust: {
+            bsonType: 'bool'
+          }
+        }
+      },
+      slot_number: {
+        bsonType: 'string',
+        description: '\'slot_number\' is a string'
+      },
+      wing_code: {
+        bsonType: 'string',
+        description: '\'wing_code\' is a string'
+      }
+    }
+  }
+}
